@@ -39,13 +39,6 @@ QDir GameSkyrimVR::documentsDirectory() const
   return m_MyGamesPath;
 }
 
-QString GameSkyrimVR::identifyGamePath() const
-{
-  QString path = "Software\\Bethesda Softworks\\" + gameName();
-  return findInRegistry(HKEY_LOCAL_MACHINE, path.toStdWString().c_str(),
-                        L"Installed Path");
-}
-
 QDir GameSkyrimVR::savesDirectory() const
 {
   return QDir(m_MyGamesPath + "/Saves");
