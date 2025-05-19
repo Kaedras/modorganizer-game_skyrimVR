@@ -65,6 +65,11 @@ protected:
   QFileInfo findInGameFolder(const QString& relativePath) const;
   QString myGamesPath() const;
   virtual QString identifyGamePath() const override;
+
+#ifdef __unix__
+  // returns the LocalAppData path inside the wine prefix
+  static QString localAppFolder();
+#endif
 };
 
 #endif  // _GAMESKYRIMVR_H
